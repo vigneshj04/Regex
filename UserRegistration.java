@@ -9,13 +9,17 @@ public class UserRegistration {
         System.out.println("Enter Your First Name: ");
         Scanner input = new Scanner(System.in);
         String firstName = input.next();
-        Pattern p = Pattern.compile("^[A-Z][a-z]{3}$");
-        Matcher m = p.matcher(firstName);
+        System.out.println("Enter the Last Name");
+        String lastName = input.next();
 
-        if (m.find()) {
-            System.out.println(firstName + " is Valid");
+        Pattern P = Pattern.compile("^[A-Z][a-z]{2}$");
+        Matcher M = P.matcher(firstName);
+        Matcher M1 = P.matcher(lastName);
+
+        if (M.find() && M1.find()) {
+            System.out.println("User Name Is Valid");
         } else {
-            System.out.println(firstName + " Not Valid");
+            System.out.println("User Name Is Not Valid");
             System.out.println("First Letter must be Capital");
         }
     }

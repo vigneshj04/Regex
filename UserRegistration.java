@@ -22,7 +22,7 @@ public class UserRegistration {
         Pattern P = Pattern.compile("^[A-Z][a-z]{2}$");
         Pattern P1 = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
         Pattern P2 = Pattern.compile("[91?]\\s[6-9][0-9]{9}$");
-        Pattern P3 = Pattern.compile("[A-z]{8}$");
+        Pattern P3 = Pattern.compile("[A-Z][a-z]{7}$");
 
         Matcher M = P.matcher(firstName);
         Matcher M1 = P.matcher(lastName);

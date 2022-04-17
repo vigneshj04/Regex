@@ -11,16 +11,20 @@ public class UserRegistration {
         String firstName = input.next();
         System.out.println("Enter the Last Name");
         String lastName = input.next();
+        System.out.println("Enter the E-Mail-ID");
+        String eMail = input.next();
 
         Pattern P = Pattern.compile("^[A-Z][a-z]{2}$");
+        Pattern P1 = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
         Matcher M = P.matcher(firstName);
         Matcher M1 = P.matcher(lastName);
+        Matcher M2 = P1.matcher(eMail);
 
-        if (M.find() && M1.find()) {
-            System.out.println("User Name Is Valid");
+
+        if (M.find() && M1.find() && M2.find()) {
+            System.out.println("Your Details are Valid");
         } else {
-            System.out.println("User Name Is Not Valid");
-            System.out.println("First Letter must be Capital");
+            System.out.println("Your Details are Not Valid");
         }
     }
 }

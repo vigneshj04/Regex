@@ -13,18 +13,25 @@ public class UserRegistration {
         String lastName = input.next();
         System.out.println("Enter the E-Mail-ID");
         String eMail = input.next();
+        System.out.println("Enter the Mobile Number");
+        String mobileNumber = input.next();
 
         Pattern P = Pattern.compile("^[A-Z][a-z]{2}$");
         Pattern P1 = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
+        Pattern P2 = Pattern.compile("[91?]\\s[6-9][0-9]{9}$");
         Matcher M = P.matcher(firstName);
         Matcher M1 = P.matcher(lastName);
         Matcher M2 = P1.matcher(eMail);
+        Matcher M3 = P2.matcher(mobileNumber);
 
-
-        if (M.find() && M1.find() && M2.find()) {
-            System.out.println("Your Details are Valid");
+        if (M.find() && M1.find()) {
+            if (M2.find() && M3.find()) {
+                System.out.println("Your Details are Valid");
+            } else {
+                System.out.println("Please Check Your Email and Mobile Number");
+            }
         } else {
-            System.out.println("Your Details are Not Valid");
+            System.out.println("Please Check Your First Name and Last Name");
         }
     }
 }

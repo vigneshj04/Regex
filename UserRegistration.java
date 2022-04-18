@@ -9,10 +9,10 @@ public class UserRegistration {
         System.out.println("Enter Your First Name: ");
         Scanner input = new Scanner(System.in);
         String firstName = input.next();
-        Pattern p = Pattern.compile("^[A-Z][a-z]{3}$");
-        Matcher m = p.matcher(firstName);
+        Pattern namePattern = Pattern.compile("^[A-Z][a-z]{3}$");
+        Matcher nameMatcher = namePattern.matcher(firstName);
 
-        if (m.find()) {
+        if (nameMatcher.find()) {
             System.out.println(firstName + " is Valid");
         } else {
             System.out.println(firstName + " Not Valid");

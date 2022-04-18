@@ -14,14 +14,14 @@ public class UserRegistration {
         System.out.println("Enter the E-Mail-ID");
         String eMail = input.next();
 
-        Pattern P = Pattern.compile("^[A-Z][a-z]{2}$");
-        Pattern P1 = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
-        Matcher M = P.matcher(firstName);
-        Matcher M1 = P.matcher(lastName);
-        Matcher M2 = P1.matcher(eMail);
+        Pattern namePattern = Pattern.compile("^[A-Z][a-z]{2}$");
+        Pattern emailPattern = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
+        Matcher nameMatcher = namePattern.matcher(firstName);
+        Matcher lastNameMatch = namePattern.matcher(lastName);
+        Matcher emailMatch = emailPattern.matcher(eMail);
 
 
-        if (M.find() && M1.find() && M2.find()) {
+        if (nameMatcher.find() && lastNameMatch.find() && emailMatch.find()) {
             System.out.println("Your Details are Valid");
         } else {
             System.out.println("Your Details are Not Valid");

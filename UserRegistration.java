@@ -12,11 +12,11 @@ public class UserRegistration {
         System.out.println("Enter the Last Name");
         String lastName = input.next();
 
-        Pattern P = Pattern.compile("^[A-Z][a-z]{2}$");
-        Matcher M = P.matcher(firstName);
-        Matcher M1 = P.matcher(lastName);
+        Pattern namePattern = Pattern.compile("^[A-Z][a-z]{2}$");
+        Matcher nameMatcher = namePattern.matcher(firstName);
+        Matcher lastNameMatch = namePattern.matcher(lastName);
 
-        if (M.find() && M1.find()) {
+        if (nameMatcher.find() && lastNameMatch.find()) {
             System.out.println("User Name Is Valid");
         } else {
             System.out.println("User Name Is Not Valid");

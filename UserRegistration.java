@@ -16,16 +16,16 @@ public class UserRegistration {
         System.out.println("Enter the Mobile Number");
         String mobileNumber = input.next();
 
-        Pattern P = Pattern.compile("^[A-Z][a-z]{2}$");
-        Pattern P1 = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
-        Pattern P2 = Pattern.compile("[91?]\\s[6-9][0-9]{9}$");
-        Matcher M = P.matcher(firstName);
-        Matcher M1 = P.matcher(lastName);
-        Matcher M2 = P1.matcher(eMail);
-        Matcher M3 = P2.matcher(mobileNumber);
+        Pattern namePattern = Pattern.compile("^[A-Z][a-z]{2}$");
+        Pattern emailPattern = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
+        Pattern mob_Pattern = Pattern.compile("[91?]\\s[6-9][0-9]{9}$");
+        Matcher nameMatcher = namePattern.matcher(firstName);
+        Matcher lastNameMatch = namePattern.matcher(lastName);
+        Matcher emailMatch = emailPattern.matcher(eMail);
+        Matcher mob_Match = mob_Pattern.matcher(mobileNumber);
 
-        if (M.find() && M1.find()) {
-            if (M2.find() && M3.find()) {
+        if (nameMatcher.find() && lastNameMatch.find()) {
+            if (emailMatch.find() && mob_Match.find()) {
                 System.out.println("Your Details are Valid");
             } else {
                 System.out.println("Please Check Your Email and Mobile Number");

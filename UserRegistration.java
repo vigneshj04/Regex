@@ -15,7 +15,7 @@ public class UserRegistration {
         String eMail = input.next();
 
         Pattern namePattern = Pattern.compile("^[A-Z][a-z]{2}$");
-        Pattern emailPattern = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
+        Pattern emailPattern = Pattern.compile("^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@][a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$");
         Matcher nameMatcher = namePattern.matcher(firstName);
         Matcher lastNameMatch = namePattern.matcher(lastName);
         Matcher emailMatch = emailPattern.matcher(eMail);

@@ -30,7 +30,7 @@ public class UserRegistration {
         emails.add("abc123@.com");
         emails.add("abc123@gmail.a");
 
-        String regex = ("^[A-Za-z0-9+_.-]@(.+)$");
+        String regex = ("^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@][a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$");
 
         Pattern pattern = Pattern.compile(regex);
 
